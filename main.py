@@ -1,15 +1,26 @@
-import pymongo
 
-client=pymongo.MongoClient()
 
-mydb=client["pythondb"]
 
-mycol=mydb["Product"]
+class Student:
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+        self.lap = self.Laptop()
+    def show(self):
+        print(self.name, self .rollno)
+        self.lap.show()
+    class Laptop:
+        def __int__(self):
+            self.brand = 'dell'
+            self.cpu = 'i5'
+            self.ram = 8
+        def show(self):
+            print(self.brand, self.cpu, self.ram)
 
-# data={'Name':'Mobile', 'Price':'2300'}
-# mycol.insert_one(data)
 
-datalist=[{'Name':'Laptop','Pice':'25000'},{'Name':'tablet','Price':'30000'}]
-x=mycol.insert_many(datalist)
-for x in mycol.find():
- print(x)
+s1 = Student('Navin', 9)
+s2 = Student('ravi', 8)
+
+
+s1.show()
+lap1 = Student.Laptop()
